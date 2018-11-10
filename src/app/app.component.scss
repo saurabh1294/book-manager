@@ -1,0 +1,14 @@
+/* To display a border for the input */
+.mat-form-field-infix{
+   border: 1px solid black!important;
+}
+
+/* To remove the default underline */
+.mat-input-underline.mat-form-field-underline {
+   background: transparent;
+}
+
+/* To remove the underline ripple */
+.mat-input-ripple.mat-form-field-ripple{
+   background-color: transparent; 
+}

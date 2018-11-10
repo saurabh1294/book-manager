@@ -1,0 +1,71 @@
+<div class="container center_div">
+<form [formGroup]="bookForm" (ngSubmit)="formSubmitted=true; " autocomplete="off">
+	<div class="mb-1" style="text-align:left">
+		Title
+	</div>
+	<div class="mb-3" style="text-align:left">
+		<mat-form-field>
+			<input matInput formControlName="bookTitle" placeholder="Input">
+			
+		</mat-form-field>
+		<mat-error *ngIf="(formSubmitted || bookForm.get('bookTitle').touched) && bookForm.get('bookTitle').invalid">
+          Book Name is required
+        </mat-error>
+	</div>
+	
+	<div class="mb-1" style="text-align:left">
+		Category
+	</div>
+	<div class="mb-3" style="text-align:left">
+		<mat-form-field>
+			<mat-select formControlName="bookCategory" placeholder="Select">
+				<mat-option value="option">Book 1</mat-option>
+				<mat-option value="option">Book 2</mat-option>
+				<mat-option value="option">Book 3</mat-option>
+				<mat-option value="option">Book 4</mat-option>
+				<mat-option value="option">Book 5</mat-option>
+			</mat-select>
+		</mat-form-field>
+		<mat-error *ngIf="(formSubmitted || bookForm.get('bookCategory').touched) && bookForm.get('bookCategory').invalid">
+          Book Category is required
+        </mat-error>
+	</div>
+	
+	
+	
+	<div class="mb-1" style="text-align:left">
+		Description
+	</div>
+	<div class="mb-3" style="text-align:left">
+		<mat-form-field>
+			<textarea formControlName="bookDescription" matInput placeholder="Textarea" rows="10" cols="100"></textarea>
+		</mat-form-field>
+		<mat-error *ngIf="(formSubmitted || bookForm.get('bookDescription').touched) && bookForm.get('bookDescription').invalid">
+          Book Description is required
+        </mat-error>
+	</div>
+	
+	
+	<div class="mb-3" style="margin-left:10%">
+		<button (click)="addBook()">Add</button>
+	</div>
+	</form>
+	
+	<div class="mt-50" style="margin-top:100px;float:left">
+		<div class="mb-10" style="text-align:left" style="width:400px;height:50px;border:1px solid black;margin: 0 auto;">
+			Book List
+		</div>
+		<div class="mb-1" style="text-align:left; margin-top:10px;" *ngFor="let book of booksList">
+			 <div class="mb-3">
+				{{book.name}}
+			 </div>
+			 <div class="mb-3">
+				{{book.category}}
+			 </div>
+			 <div class="mb-3">
+				{{book.description}}
+			 </div>
+		</div>
+	</div>
+	
+</div>
