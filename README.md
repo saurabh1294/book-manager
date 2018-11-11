@@ -51,4 +51,6 @@ Open another terminal and run node mocks/mock.server.js. This will start server 
 
 
 Run command yarn run test:coverage to run test cases and generate coverage reports
+
+
 Run command yarn run test:console to get detailed logs of test cases being run
