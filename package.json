@@ -8,6 +8,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "clean": "n-clean dist temp coverage",
     "build": "n-clean dist && ng build --prod",
     "test": "ng test",
     "lint": "prettier --config ./prettier.config.js --list-different \"{src,e2e}/{app,environments,assets,pageobjects,specs}/**/*{.ts,.js,.json}\" && ng lint",

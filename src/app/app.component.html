@@ -1,5 +1,5 @@
-<div class="container align-items-center horizontal-center">
-	<form [formGroup]="bookForm" (ngSubmit)="formSubmitted=true; " autocomplete="off">
+<div class="container">
+	<form class="horizontal-center" [formGroup]="bookForm" (ngSubmit)="formSubmitted=true; " autocomplete="off">
 		<div class="mb-1 text-left">
 			Title
 		</div>
@@ -16,7 +16,7 @@
 		</div>
 		<div class="mb-3 text-left">
 			<mat-form-field>
-				<mat-select formControlName="bookCategory" placeholder="Book Category">
+				<mat-select formControlName="bookCategory" ngDefaultControl placeholder="Book Category">
 					<mat-option *ngFor="let category of categories" [value]="category.label">{{category.label}}</mat-option>
 				</mat-select>
 			</mat-form-field>
