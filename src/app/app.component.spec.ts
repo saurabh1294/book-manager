@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
 
-import { AddBookSelectorListComponent } from './ app.component';
+import { AddBookSelectorListComponent } from './app.component';
 import { StaticDataService } from './shared/services/static-data.service';
 
 describe('AddBookSelectorListComponent', () => {
@@ -46,8 +46,7 @@ describe('AddBookSelectorListComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(AddBookSelectorListComponent);
-    component = fixture.com;
-    ponentInstance;
+    component = fixture.componentInstance;
     fixture.detectChanges();
     component.ngOnInit();
   });
