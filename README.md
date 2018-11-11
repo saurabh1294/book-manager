@@ -42,7 +42,11 @@ npm install -g @angular/cli
 
 cd book-manager and then run npm install
 
+## To launch this application
+Open a terminal and run command yarn start:mock to start server on port 4200.
+Open another terminal and run node mocks/mock.server.js. This will start server at port 3456 to serve static data in the form of web service
 
-Run yarn start:mock to start server on port 4200.
-Run yarn run test:coverage to run test cases and generate coverage reports
-Run yarn run test:console to get detailed logs of test cases being run
+
+
+Run command yarn run test:coverage to run test cases and generate coverage reports
+Run command yarn run test:console to get detailed logs of test cases being run
