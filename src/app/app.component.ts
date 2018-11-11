@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators } from '@angular/forms';
-import { MatDatepicker } from '@angular/material/datepicker';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { StaticDataService } from './shared/services/static-data.service';
 
 /** @title Datepicker emulating a Year and month picker */
 @Component({
@@ -10,17 +10,22 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['app.component.scss'],
   providers: [
     // add providers here if any
-	// providers: [{ provide: MAT_DIALOG_DATA, useValue: {} }]
+    // providers: [{ provide: MAT_DIALOG_DATA, useValue: {} }]
   ]
 })
 export class AddBookSelectorListComponent implements OnInit {
   bookForm: FormGroup;
   booksList: Array<any> = [];
+  categories: Array<any> = [];
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private staticDataService: StaticDataService) {}
 
   ngOnInit() {
     // initialize variables here
+    this.staticDataService.getStaticData().subscribe(response => {
+      this.categories = response.data ? response.data['categories'] : [];
+      console.log('Response from the web service', this.categories);
+    });
     this.initForm();
   }
 
@@ -33,7 +38,7 @@ export class AddBookSelectorListComponent implements OnInit {
   }
 
   addBook() {
-    console.log('add book', this.bookForm.invalid);
+    // add book only if all fields entered by user
     if (!this.bookForm.invalid) {
       const bookName = this.bookForm.get('bookTitle').value,
         bookCategory = this.bookForm.get('bookCategory').value,
@@ -46,8 +51,8 @@ export class AddBookSelectorListComponent implements OnInit {
       };
 
       this.booksList.push(obj);
-
       this.bookForm.reset();
+      this.bookForm.markAsPristine();
     }
   }
 }

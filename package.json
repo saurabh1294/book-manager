@@ -12,6 +12,7 @@
     "test": "ng test",
     "lint": "prettier --config ./prettier.config.js --list-different \"{src,e2e}/{app,environments,assets,pageobjects,specs}/**/*{.ts,.js,.json}\" && ng lint",
     "e2e": "ng e2e",
+    "mock": "concurrently -k \"node mocks/mock.server.js\" \"yarn start:mock\"",
     "start:mock": "yarn start && ng serve --proxy-config mocks/proxy.conf.js --serve-path /bookStore/ --live-reload false",
     "build:analyze": "yarn build --stats-json && webpack-bundle-analyzer dist/stats.json",
     "test:console": "ng test --source-map false",
@@ -38,7 +39,8 @@
     "core-js": "^2.5.4",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26",
-	"yarn": "latest"
+    "yarn": "latest",
+    "cors": "latest"
   },
   "devDependencies": {
     "@angular/compiler-cli": "^6.0.3",
@@ -52,6 +54,8 @@
     "@types/node": "~8.9.4",
     "body-parser": "^1.18.3",
     "codelyzer": "~4.2.1",
+    "concurrently": "^3.6.0",
+    "express": "^4.16.3",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~1.7.1",

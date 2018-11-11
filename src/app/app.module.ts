@@ -4,6 +4,8 @@ import { MatNativeDateModule, MatDatepickerModule, MatFormFieldModule, MatInputM
 import { AddBookSelectorListComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StaticDataService } from './shared/services/static-data.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AddBookSelectorListComponent],
@@ -16,9 +18,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [{ provide: StaticDataService, useClass: StaticDataService }],
   bootstrap: [AddBookSelectorListComponent]
 })
 export class AppModule {}

@@ -1,0 +1,34 @@
+{
+  "data": {
+    "categories": [
+      {
+        "code": "tech",
+        "label": "Technology"
+      },
+      {
+        "code": "action",
+        "label": "Action"
+      },
+      {
+        "code": "drama",
+        "label": "Drama"
+      },
+      {
+          "code": "horror",
+          "label": "Horror"
+      },
+      {
+          "code": "thriller",
+          "label": "Thriller"
+      },
+      {
+          "code": "romance",
+          "label": "Romance"
+      },
+      {
+          "code": "religious",
+          "label": "Religious"
+      }
+    ]
+  }
+}

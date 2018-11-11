@@ -13,8 +13,6 @@ const CONTEXT = 'bookStore';
 
 const CONFIG = {
   [`/${CONTEXT}/public/api`]: BASE_PROXY_CONFIG,
-  '/eam': BASE_PROXY_CONFIG,
-	'/content': BASE_PROXY_CONFIG
 };
 
 module.exports = CONFIG;
