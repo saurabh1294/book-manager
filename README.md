@@ -54,3 +54,12 @@ Run command yarn run test:coverage to run test cases and generate coverage repor
 
 
 Run command yarn run test:console to get detailed logs of test cases being run
+
+
+## Linting
+tsLint has also been integrated and to lint the files run the following commands
+
+yarn lint:fix
+
+yarn lint
+
